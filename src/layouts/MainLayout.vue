@@ -9,7 +9,7 @@
       :width="230"
     >
       <!-- drawer content -->
-      <div class="row search-box justify-center">
+      <div class="row _search-box justify-center">
         <q-input outlined v-model="search" placeholder="search" dense>
           <template v-slot:append>
             <q-icon name="search" />
@@ -17,13 +17,7 @@
         </q-input>
       </div>
       <div class="row justify-center full-width">
-        <MenuItem
-          v-for="menu in menuItems"
-          :key="menu.title"
-          :title="menu.title"
-          :icon="menu.icon"
-          :to="menu.to"
-        ></MenuItem>
+        <MenuItem v-for="menu in menuItems" :key="menu.title" v-bind="menu" />
       </div>
     </q-drawer>
 
@@ -55,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search-box {
+._search-box {
   height: 100px;
 
   .q-input {
