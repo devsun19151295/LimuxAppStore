@@ -3,7 +3,7 @@ const state = {
     {
       title: "Discover",
       icon: "grade",
-      to: "/discover"
+      to: "/"
     },
     {
       title: "Create",

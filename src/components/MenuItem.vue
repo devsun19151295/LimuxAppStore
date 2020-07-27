@@ -1,5 +1,11 @@
 <template>
-  <q-item :to="to" exact clickable class="full-width q-mt-xs">
+  <q-item
+    :to="to"
+    active-class="_menu-active"
+    exact
+    clickable
+    class="full-width q-mt-xs"
+  >
     <q-item-section avatar>
       <q-icon size="30px" :name="icon" />
     </q-item-section>
@@ -28,10 +34,18 @@ export default {
 
     to: {
       type: String,
-      required: true
+      required: true,
+      default: "/"
     }
+  },
+  mounted() {
+    console.log(this.to);
   }
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+._menu-active {
+  background: $tab;
+}
+</style>
