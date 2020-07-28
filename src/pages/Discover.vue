@@ -49,7 +49,7 @@
             <q-card class="_box-in-slide ">
               <q-card-section class="full-width full-height">
                 <div class="row full-width full-height justify-between">
-                  <div class="col-6 column q-pa-md">
+                  <div class="_box-item-text col-sm-12 col-md-6 column q-pa-md">
                     <div class="q-pt-xs text-weight-bold text-uppercase ">
                       <div class="_box-text text-sub-title-color">
                         Meet the developer
@@ -65,7 +65,7 @@
                     </div>
                   </div>
                   <div
-                    class="col-6 column full-height justify-center items-center "
+                    class="_box-item-image col-md-6 column full-height justify-center items-center "
                   >
                     <div class="row q-pr-sm">
                       <q-avatar size="200px">
@@ -82,7 +82,7 @@
             <q-card class="_box-in-slide ">
               <q-card-section class="full-width full-height">
                 <div class="row full-width full-height justify-between">
-                  <div class="col-6 column q-pa-md">
+                  <div class="col-md-6 _box-item-text col-sm-12 column q-pa-md">
                     <div class="q-pt-xs text-weight-bold text-uppercase ">
                       <div class="text-sub-title-color">
                         Meet the developer
@@ -98,7 +98,7 @@
                     </div>
                   </div>
                   <div
-                    class="col-6 column full-height justify-center items-center "
+                    class="_box-item-image col-6 column full-height justify-center items-center "
                   >
                     <div class="row q-pr-sm">
                       <q-avatar size="200px">
@@ -184,6 +184,17 @@ export default {
 
     border-radius: 10px;
     background-color: $box;
+  }
+}
+
+@media (max-width: $breakpoint-sm-max) {
+  ._box-item-image {
+    display: none;
+  }
+}
+@media (max-width: 1174px) {
+  ._box-item-image {
+    display: none;
   }
 }
 </style>
