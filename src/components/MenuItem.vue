@@ -47,5 +47,9 @@ export default {
 <style lang="scss" scoped>
 ._menu-active {
   background: $tab;
+
+  .q-icon {
+    color: black;
+  }
 }
 </style>
