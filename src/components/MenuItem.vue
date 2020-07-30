@@ -38,18 +38,22 @@ export default {
       default: "/"
     }
   },
-  mounted() {
-    console.log(this.to);
-  }
+  mounted() {}
 };
 </script>
 
 <style lang="scss" scoped>
+.q-item__section--avatar {
+  min-width: 30px;
+}
+.q-item {
+  color: $grey-4;
+}
 ._menu-active {
-  background: $tab;
+  background: $grey-8;
 
   .q-icon {
-    color: black;
+    color: $grey-3;
   }
 }
 </style>

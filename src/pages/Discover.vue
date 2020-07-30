@@ -5,7 +5,7 @@
         <q-card-section>
           <q-img
             class="_head-image"
-            src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1920,h_640/https://dashboard.snapcraft.io/site_media/appmedia/2020/06/Banner-1920x640_9ZG7J6Z.png"
+            src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1920,h_640/https://dashboard.snapcraft.io/site_media/appmedia/2019/10/gimp-splash-fs8.png"
           >
             <div class="absolute-top text-subtitle1 text-left">
               <div class="row q-pt-md">
@@ -71,7 +71,7 @@
                       <q-avatar size="200px">
                         <q-img
                           :ratio="1"
-                          src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_860/https://dashboard.snapcraft.io/site_media/appmedia/2019/01/2-slack-snap-integrations.png"
+                          src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_692,h_462/https://admin.insights.ubuntu.com/wp-content/uploads/abdb/ethan-hoover-334116-unsplash.jpg"
                         />
                       </q-avatar>
                     </div>
@@ -135,8 +135,8 @@
       <q-separator
         class="q-mt-md"
         style="width: 90%;"
-        color="grey-4"
-        size="1.3px"
+        color="grey-8"
+        size="1px"
         inset
       />
     </div>
@@ -183,7 +183,13 @@ export default {
     box-shadow: none;
 
     border-radius: 10px;
-    background-color: $box;
+    background-color: $grey-9;
+  }
+}
+
+/deep/ .q-carousel__slides-container {
+  .q-panel {
+    background-color: $grey-10;
   }
 }
 

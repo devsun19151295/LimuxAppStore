@@ -21,7 +21,7 @@
       </div>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="bg-grey-10">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -44,6 +44,9 @@ export default {
   },
   computed: {
     ...mapGetters("menu", ["menuItems"])
+  },
+  created() {
+    this.$q.dark.set(true);
   }
 };
 </script>
@@ -56,10 +59,10 @@ export default {
     width: 180px;
   }
 }
-/deep/ .q-item__section--avatar {
-  min-width: 30px;
-}
-/deep/ .q-item {
-  color: $layout-text;
+
+/deep/ .q-drawer-container {
+  .q-drawer {
+    border-color: black;
+  }
 }
 </style>
