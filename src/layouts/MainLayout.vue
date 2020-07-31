@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh LpR lff">
     <q-drawer
       show-if-above
       v-model="leftDrawerOpen"
@@ -8,7 +8,6 @@
       bordered
       :width="230"
     >
-      <!-- drawer content -->
       <div class="row _search-box justify-center">
         <q-input outlined v-model="search" placeholder="search" dense>
           <template v-slot:append>
@@ -21,7 +20,7 @@
       </div>
     </q-drawer>
 
-    <q-page-container class="bg-grey-10">
+    <q-page-container padding class="bg-grey-10">
       <router-view />
     </q-page-container>
   </q-layout>

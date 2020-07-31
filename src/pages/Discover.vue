@@ -1,206 +1,90 @@
 <template>
-  <q-page>
-    <div class="row justify-center full-width">
-      <q-card class="_head-box">
-        <q-card-section>
-          <q-img
-            class="_head-image"
-            src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_1920,h_640/https://dashboard.snapcraft.io/site_media/appmedia/2019/10/gimp-splash-fs8.png"
-          >
-            <div class="absolute-top text-subtitle1 text-left">
-              <div class="row q-pt-md">
-                <div
-                  class="_opty-7 text-weight-bold text-caption text-uppercase"
-                >
-                  Featured snaps
-                </div>
-              </div>
-              <div class="row q-pt-sm">
-                <div class="text-h5 text-weight-400">Flokk Contacts</div>
-              </div>
-              <div class="row q-pt-sm">
-                <div class="_opty-7 text-caption">
-                  Flutter showcase app for your Google Contacts.
-                </div>
-              </div>
-            </div>
-          </q-img>
-        </q-card-section>
-      </q-card>
-    </div>
+  <q-page class="q-pa-xl">
+    <FirstContent v-bind="firstContentItem"></FirstContent>
 
-    <div class="row justify-center full-width q-pt-md">
-      <q-carousel
-        v-model="slide"
-        transition-prev="slide-right"
-        transition-next="slide-left"
-        swipeable
-        animated
-        control-color="primary"
-        padding
-        arrows
-        height="300px"
-        class="_slide-list"
-      >
-        <q-carousel-slide :name="1" class="column no-wrap">
-          <div
-            class="row full-width justify-center q-gutter-sm q-col-gutter no-wrap "
-          >
-            <q-card class="_box-in-slide ">
-              <q-card-section class="full-width full-height">
-                <div class="row full-width full-height justify-between">
-                  <div class="_box-item-text col-sm-12 col-md-6 column q-pa-md">
-                    <div class="q-pt-xs text-weight-bold text-uppercase ">
-                      <div class="_box-text text-sub-title-color">
-                        Meet the developer
-                      </div>
-                    </div>
-                    <div class="q-pt-xs text-h5 text-weight-400">
-                      <div class="_box-text">AsssistiveWare: a world of</div>
-                    </div>
-                    <div class="q-pt-xs text-body1">
-                      <div class="_box-text text-sub-title-color">
-                        help a friend - example
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="_box-item-image col-md-6 column full-height justify-center items-center "
-                  >
-                    <div class="row q-pr-sm">
-                      <q-avatar size="200px">
-                        <q-img
-                          :ratio="1"
-                          src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_692,h_462/https://admin.insights.ubuntu.com/wp-content/uploads/abdb/ethan-hoover-334116-unsplash.jpg"
-                        />
-                      </q-avatar>
-                    </div>
-                  </div>
-                </div>
-              </q-card-section>
-            </q-card>
-            <q-card class="_box-in-slide ">
-              <q-card-section class="full-width full-height">
-                <div class="row full-width full-height justify-between">
-                  <div class="col-md-6 _box-item-text col-sm-12 column q-pa-md">
-                    <div class="q-pt-xs text-weight-bold text-uppercase ">
-                      <div class="text-sub-title-color">
-                        Meet the developer
-                      </div>
-                    </div>
-                    <div class="q-pt-xs text-h5 text-weight-400">
-                      <div class="_box-text">AsssistiveWare: a world of</div>
-                    </div>
-                    <div class="q-pt-xs text-body1">
-                      <div class="text-sub-title-color">
-                        help a friend - example
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="_box-item-image col-6 column full-height justify-center items-center "
-                  >
-                    <div class="row q-pr-sm">
-                      <q-avatar size="200px">
-                        <q-img
-                          :ratio="1"
-                          src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_860/https://dashboard.snapcraft.io/site_media/appmedia/2019/01/2-slack-snap-integrations.png"
-                        />
-                      </q-avatar>
-                    </div>
-                  </div>
-                </div>
-              </q-card-section>
-            </q-card>
-          </div>
-        </q-carousel-slide>
-        <!-- <q-carousel-slide :name="2" class="column no-wrap">
-          <div class="row fit justify-center q-gutter-sm q-col-gutter no-wrap">
-            <q-card class="_box-in-slide ">
-              <q-card-section>
-                test 3
-              </q-card-section>
-            </q-card>
-            <q-card class="_box-in-slide ">
-              <q-card-section>
-                test 4
-              </q-card-section>
-            </q-card>
-          </div>
-        </q-carousel-slide> -->
-      </q-carousel>
-    </div>
+    <BoxListContent :itemList="boxListItem"></BoxListContent>
 
     <div class="row items-center justify-center">
-      <q-separator
-        class="q-mt-md"
-        style="width: 90%;"
-        color="grey-8"
-        size="1px"
-        inset
-      />
+      <q-separator class="q-mt-md" color="grey-8" size="1px" inset />
+    </div>
+
+    <!-- content -->
+    <!-- <div class="row q-col-gutter-md q-col-gutter-y-lg q-mt-xs">
+      <div class="col-4" v-for="n in 10" :key="`none-${n}`">
+        <div class="my-content">&nbsp;</div>
+      </div>
+    </div> -->
+
+    <div class="row items-center justify-center">
+      <q-separator class="q-mt-md" color="grey-8" size="1px" inset />
     </div>
   </q-page>
 </template>
 
 <script>
+import FirstContent from "components/FirstContent";
+import BoxListContent from "components/BoxListContent";
+
 export default {
   name: "DescoverPage",
+  components: { FirstContent, BoxListContent },
   data() {
     return {
-      slide: 1
+      firstContentItem: {
+        imageUrl:
+          "https://dashboard.snapcraft.io/site_media/appmedia/2018/03/Screenshot_20180326_233800.png",
+        category: "game snaps",
+        title: "Shattered Pixel Dungeon",
+        description:
+          "Shattered Pixel Dungeon is a Rogue-like RPG, with pixel art graphics, lots of variety and replay-ability."
+      },
+      boxListItem: [
+        {
+          firstContent: {
+            imageUrl:
+              "https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_875/https://admin.insights.ubuntu.com/wp-content/uploads/7389/header-cover.png",
+            category: "Development",
+            title: "Snaps help Xibo rekindle its relationship with Linux",
+            description: "by Sarah Dickinson on 27 August 2019"
+          },
+          secordContent: {
+            imageUrl:
+              "https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_875/https://admin.insights.ubuntu.com/wp-content/uploads/ec14/noom-peerapong-30948-unsplash.jpg",
+            category: "Development",
+            title: "Make compelling videos with free software: Director’s Cut",
+            description:
+              "Creating videos is easy. Creating great videos, not so much. "
+          }
+        },
+        {
+          firstContent: {
+            imageUrl:
+              "https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_875/https://admin.insights.ubuntu.com/wp-content/uploads/166f/lucia-lua-ramirez-lG0AHN1Gapw-unsplash.jpg",
+            category: "productivity",
+            title:
+              "Productivity is but a snap away – useful applications for your everyday needs",
+            description:
+              "The state of being productive comes in various guises. "
+          },
+          secordContent: {
+            imageUrl:
+              "https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_875/https://admin.insights.ubuntu.com/wp-content/uploads/9805/Flokk.png",
+            category: "Development",
+            title: "Canonical Offers Flutter Support for Linux Desktop Apps",
+            description:
+              "Google aims to be a portable framework for building beautiful UIs that run at native speed"
+          }
+        }
+      ]
     };
   }
 };
 </script>
 
 <style lang="scss" scoped>
-._head-box {
-  width: 90%;
-  box-shadow: none;
-
-  .q-card__section--vert {
-    padding: unset;
-  }
-
-  ._head-image {
-    height: 22rem;
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  .q-img__content > div {
-    background: unset;
-  }
-}
-
-._slide-list {
-  width: 100%;
-
-  ._box-in-slide {
-    width: 100%;
-    height: 17rem;
-    box-shadow: none;
-
-    border-radius: 10px;
-    background-color: $grey-9;
-  }
-}
-
-/deep/ .q-carousel__slides-container {
-  .q-panel {
-    background-color: $grey-10;
-  }
-}
-
-@media (max-width: $breakpoint-sm-max) {
-  ._box-item-image {
-    display: none;
-  }
-}
-@media (max-width: 1174px) {
-  ._box-item-image {
-    display: none;
-  }
+.my-content {
+  padding: 10px 15px;
+  background: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
 }
 </style>
